@@ -62,11 +62,9 @@
 		C698F73728A96F9200667DE7 /* NaviSumit */ = {
 			isa = PBXGroup;
 			children = (
+				C698F75628A97E2B00667DE7 /* Modules */,
+				C698F75528A97E0400667DE7 /* Main */,
 				C698F75128A9776F00667DE7 /* Common */,
-				C698F74C28A9707500667DE7 /* Home */,
-				C698F73828A96F9200667DE7 /* AppDelegate.swift */,
-				C698F73A28A96F9200667DE7 /* SceneDelegate.swift */,
-				C698F73E28A96F9200667DE7 /* Main.storyboard */,
 				C698F74128A96F9500667DE7 /* Assets.xcassets */,
 				C698F74328A96F9500667DE7 /* LaunchScreen.storyboard */,
 				C698F74628A96F9500667DE7 /* Info.plist */,
@@ -90,6 +88,24 @@
 				C698F75228A9778100667DE7 /* Constants.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		C698F75528A97E0400667DE7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C698F73828A96F9200667DE7 /* AppDelegate.swift */,
+				C698F73A28A96F9200667DE7 /* SceneDelegate.swift */,
+				C698F73E28A96F9200667DE7 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C698F75628A97E2B00667DE7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C698F74C28A9707500667DE7 /* Home */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

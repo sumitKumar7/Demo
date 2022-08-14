@@ -16,7 +16,6 @@ class HomeTableViewCell: UITableViewCell {
     
     private var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello"
         label.textAlignment = .left
         return label
     }()
