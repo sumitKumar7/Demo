@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C65C1FAE28AA13D700FEACF2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C1FAD28AA13D700FEACF2 /* UIView+Extension.swift */; };
 		C698F73928A96F9200667DE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698F73828A96F9200667DE7 /* AppDelegate.swift */; };
 		C698F73B28A96F9200667DE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698F73A28A96F9200667DE7 /* SceneDelegate.swift */; };
 		C698F73D28A96F9200667DE7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698F73C28A96F9200667DE7 /* HomeViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C65C1FAD28AA13D700FEACF2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C698F73528A96F9200667DE7 /* NaviSumit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaviSumit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C698F73828A96F9200667DE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C698F73A28A96F9200667DE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C65C1FAC28AA13C100FEACF2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C65C1FAD28AA13D700FEACF2 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C698F72C28A96F9200667DE7 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		C698F75128A9776F00667DE7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C65C1FAC28AA13C100FEACF2 /* Extensions */,
 				C698F75228A9778100667DE7 /* Constants.swift */,
 			);
 			path = Common;
@@ -180,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C698F73D28A96F9200667DE7 /* HomeViewController.swift in Sources */,
+				C65C1FAE28AA13D700FEACF2 /* UIView+Extension.swift in Sources */,
 				C698F75028A9737200667DE7 /* HomeTableViewCell.swift in Sources */,
 				C698F74E28A970AE00667DE7 /* HomeView.swift in Sources */,
 				C698F73928A96F9200667DE7 /* AppDelegate.swift in Sources */,
