@@ -46,11 +46,15 @@ class HomeTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    private let userImageSize = CGSize(width: 100, height: 100)
+    private let userImageSize = CGSize(width: 50, height: 50)
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     private func setup() {
@@ -59,13 +63,17 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        
+        userImageView.backgroundColor = .red
+        userImageView.addCorner(with: userImageSize.height/2)
     }
     
     private func setupConstraints() {
         setupContainerViewConstraints()
         setupUserImageConstraints()
         setupTitleLabelConstraints()
+        setupCreatedLabelConstraints()
+        setupClosedLabelConstraints()
+        setupUsernameLabelConstraints()
     }
     
     private func setupContainerViewConstraints() {
@@ -83,9 +91,8 @@ class HomeTableViewCell: UITableViewCell {
         containerView.addSubview(userImageView)
         userImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            userImageView.topAnchor.constraint(equalTo: contentView.topAnchor,
-                                               constant: Constants.paddingEight),
-            userImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor,
+            userImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            userImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor,
                                                 constant: Constants.paddingSixteen),
             userImageView.heightAnchor.constraint(equalToConstant: userImageSize.height),
             userImageView.widthAnchor.constraint(equalToConstant: userImageSize.width)
@@ -98,10 +105,60 @@ class HomeTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor,
                                             constant: Constants.paddingEight),
-            titleLabel.leftAnchor.constraint(equalTo: userImageView.rightAnchor),
+            titleLabel.leftAnchor.constraint(equalTo: userImageView.rightAnchor,
+                                             constant: Constants.paddingEight),
+            titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 20.0),
             titleLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor,
                                               constant: -Constants.paddingSixteen)
         ])
+    }
+    
+    private func setupCreatedLabelConstraints() {
+        containerView.addSubview(createdLabel)
+        createdLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            createdLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
+                                              constant: 2.0),
+            createdLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+            createdLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 20.0),
+            createdLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor,
+                                              constant: -Constants.paddingSixteen)
+        ])
+    }
+    
+    private func setupClosedLabelConstraints() {
+        containerView.addSubview(closedLabel)
+        closedLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            closedLabel.topAnchor.constraint(equalTo: createdLabel.bottomAnchor,
+                                             constant: 2.0),
+            closedLabel.leftAnchor.constraint(equalTo: createdLabel.leftAnchor),
+            closedLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 20.0),
+            closedLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor,
+                                              constant: -Constants.paddingSixteen)
+        ])
+    }
+    
+    private func setupUsernameLabelConstraints() {
+        containerView.addSubview(usernameLabel)
+        usernameLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            usernameLabel.topAnchor.constraint(equalTo: closedLabel.bottomAnchor,
+                                             constant: 2.0),
+            usernameLabel.leftAnchor.constraint(equalTo: closedLabel.leftAnchor),
+            usernameLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor,
+                                              constant: -Constants.paddingSixteen),
+            usernameLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 20.0),
+            usernameLabel.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor,
+                                                  constant: -Constants.paddingEight)
+        ])
+    }
+    
+    func configure(with data: String) {
+        titleLabel.text = "Title: \(data)"
+        createdLabel.text = "Created: \(data)"
+        closedLabel.text = "Closed: \(data)"
+        usernameLabel.text = "User: \(data)"
     }
     
 }

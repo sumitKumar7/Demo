@@ -64,11 +64,12 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             assertionFailure("Unable to find HomeTableViewCell in File: \(#file)")
             return UITableViewCell()
         }
+        cell.configure(with: "\(indexPath.row)")
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        60
+        UITableView.automaticDimension
     }
     
 }
