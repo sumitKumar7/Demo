@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		C65C1FAE28AA13D700FEACF2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C1FAD28AA13D700FEACF2 /* UIView+Extension.swift */; };
 		C65C1FB428AA59B900FEACF2 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C1FB328AA59B900FEACF2 /* HomeService.swift */; };
+		C696F33E28AA65BB00F9F2C0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696F33D28AA65BB00F9F2C0 /* NetworkService.swift */; };
+		C696F34128AA693600F9F2C0 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696F34028AA693600F9F2C0 /* HomeModel.swift */; };
+		C696F34328AA716000F9F2C0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696F34228AA716000F9F2C0 /* Utils.swift */; };
+		C696F34528AA739100F9F2C0 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696F34428AA739100F9F2C0 /* UIImageView+Extension.swift */; };
 		C698F73928A96F9200667DE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698F73828A96F9200667DE7 /* AppDelegate.swift */; };
 		C698F73B28A96F9200667DE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698F73A28A96F9200667DE7 /* SceneDelegate.swift */; };
 		C698F73D28A96F9200667DE7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698F73C28A96F9200667DE7 /* HomeViewController.swift */; };
@@ -23,6 +27,10 @@
 /* Begin PBXFileReference section */
 		C65C1FAD28AA13D700FEACF2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C65C1FB328AA59B900FEACF2 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		C696F33D28AA65BB00F9F2C0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C696F34028AA693600F9F2C0 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		C696F34228AA716000F9F2C0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C696F34428AA739100F9F2C0 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		C698F73528A96F9200667DE7 /* NaviSumit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaviSumit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C698F73828A96F9200667DE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C698F73A28A96F9200667DE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				C65C1FAD28AA13D700FEACF2 /* UIView+Extension.swift */,
+				C696F34428AA739100F9F2C0 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -61,6 +70,14 @@
 				C65C1FB328AA59B900FEACF2 /* HomeService.swift */,
 			);
 			path = HomeService;
+			sourceTree = "<group>";
+		};
+		C696F33F28AA691C00F9F2C0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C696F34028AA693600F9F2C0 /* HomeModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		C698F72C28A96F9200667DE7 = {
@@ -95,6 +112,7 @@
 		C698F74C28A9707500667DE7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C696F33F28AA691C00F9F2C0 /* Data */,
 				C65C1FB228AA59A500FEACF2 /* HomeService */,
 				C698F73C28A96F9200667DE7 /* HomeViewController.swift */,
 				C698F74D28A970AE00667DE7 /* HomeView.swift */,
@@ -108,6 +126,8 @@
 			children = (
 				C65C1FAC28AA13C100FEACF2 /* Extensions */,
 				C698F75228A9778100667DE7 /* Constants.swift */,
+				C696F33D28AA65BB00F9F2C0 /* NetworkService.swift */,
+				C696F34228AA716000F9F2C0 /* Utils.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -205,9 +225,13 @@
 				C65C1FAE28AA13D700FEACF2 /* UIView+Extension.swift in Sources */,
 				C698F75028A9737200667DE7 /* HomeTableViewCell.swift in Sources */,
 				C698F74E28A970AE00667DE7 /* HomeView.swift in Sources */,
+				C696F33E28AA65BB00F9F2C0 /* NetworkService.swift in Sources */,
 				C698F73928A96F9200667DE7 /* AppDelegate.swift in Sources */,
+				C696F34528AA739100F9F2C0 /* UIImageView+Extension.swift in Sources */,
 				C698F73B28A96F9200667DE7 /* SceneDelegate.swift in Sources */,
+				C696F34328AA716000F9F2C0 /* Utils.swift in Sources */,
 				C65C1FB428AA59B900FEACF2 /* HomeService.swift in Sources */,
+				C696F34128AA693600F9F2C0 /* HomeModel.swift in Sources */,
 				C698F75328A9778100667DE7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,24 +17,32 @@ class HomeTableViewCell: UITableViewCell {
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.numberOfLines = 0
         return label
     }()
     
     private var createdLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.font = .systemFont(ofSize: 12)
+        label.numberOfLines = 0
         return label
     }()
     
     private var closedLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.font = .systemFont(ofSize: 12)
+        label.numberOfLines = 0
         return label
     }()
     
     private var usernameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.font = .systemFont(ofSize: 12, weight: .semibold)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -63,8 +71,7 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        userImageView.backgroundColor = .red
-        userImageView.addCorner(with: userImageSize.height/2)
+        userImageView.addCorner(with: userImageSize.height/2, borderColor: .gray, borderWidth: 1.0)
     }
     
     private func setupConstraints() {
@@ -154,11 +161,15 @@ class HomeTableViewCell: UITableViewCell {
         ])
     }
     
-    func configure(with data: String) {
-        titleLabel.text = "Title: \(data)"
-        createdLabel.text = "Created: \(data)"
-        closedLabel.text = "Closed: \(data)"
-        usernameLabel.text = "User: \(data)"
+    func configure(with pullRequest: HomeModel) {
+        titleLabel.text = pullRequest.title
+        createdLabel.text = "Created At: " + Utils.getFormattedDate(dateString: pullRequest.createdAt!,
+                                                   currentFomat: "yyyy-MM-dd'T'HH:mm:ssZ",
+                                                   expectedFromat: "MMM d, h:mm a")
+        closedLabel.text = "Closed At: " + Utils.getFormattedDate(dateString: pullRequest.closedAt!,
+                                                  currentFomat: "yyyy-MM-dd'T'HH:mm:ssZ",
+                                                  expectedFromat: "MMM d, h:mm a")
+        usernameLabel.text = pullRequest.user.login
+        userImageView.loadThumbnail(urlSting: pullRequest.user.userImageUrlString)
     }
-    
 }
