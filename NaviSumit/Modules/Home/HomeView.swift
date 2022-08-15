@@ -9,6 +9,8 @@ import UIKit
 
 class HomeView: UIView {
     
+    // MARK: - UIComponets
+    
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .green
@@ -16,6 +18,12 @@ class HomeView: UIView {
                            forCellReuseIdentifier: String(describing: HomeTableViewCell.self))
         return tableView
     }()
+    
+    // MARK: - Properties
+    
+    var pullRequests = [HomeModel]()
+    
+    // MARK: - Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,6 +38,11 @@ class HomeView: UIView {
     private func setup() {
         setupTableView()
         setupTableViewConstraints()
+    }
+    
+    func updateView(with data: [HomeModel]) {
+        pullRequests = data
+        tableView.reloadData()
     }
     
     private func setupTableView() {
@@ -47,7 +60,6 @@ class HomeView: UIView {
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
-    
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -55,21 +67,20 @@ class HomeView: UIView {
 extension HomeView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        pullRequests.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeTableViewCell.self)) as? HomeTableViewCell else {
-            assertionFailure("Unable to find HomeTableViewCell in File: \(#file)")
+            assertionFailure("Unable to find HomeTableViewCell in Function: \(#function) \n File: \(#file)")
             return UITableViewCell()
         }
-        cell.configure(with: "\(indexPath.row)")
+        cell.configure(with: pullRequests[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
-    
 }
